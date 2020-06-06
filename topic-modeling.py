@@ -32,7 +32,7 @@ names = ['Automobiles', 'Science', 'Business','Society & Lifestyle', 'Science', 
 def topic_distribution(new_doc):
     
     X_new_doc = vect.transform(new_doc)
-    corpus2 = gensim.matutils.Sparse2Corpus(X_new_doc, documents_columns=False)
+    corpus = gensim.matutils.Sparse2Corpus(X_new_doc, documents_columns=False)
     
     
-    return list(ldamodel.get_document_topics(corpus2))[0]
+    return list(ldamodel.get_document_topics(corpus))[0]
